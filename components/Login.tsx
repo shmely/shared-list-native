@@ -21,6 +21,7 @@ import {
 } from "../firebase";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
+import { getRedirectUrl } from "expo-auth-session";
 import { UserContext } from "../context/UserContext";
 WebBrowser.maybeCompleteAuthSession();
 import { LinearGradient } from "expo-linear-gradient";
@@ -36,12 +37,10 @@ export default function Login() {
 
   const [request, response, promptAsync] =
     Google.useAuthRequest({
-      // נדרש: ה-Client ID של אפליקציית ה-Web שיצרתם ב-Google Cloud Console
       webClientId: WEB_CLIENT_ID,
-      // אפשרות: הוסף את ה-Client ID של iOS/Android אם אתה בונה גרסה עצמאית (Standalone)
-      // iosClientId: 'YOUR_IOS_CLIENT_ID',
+
       androidClientId: ANDROID_CLIENT_ID,
-    });
+    } as any);
 
   useEffect(() => {
     if (response?.type === "success") {

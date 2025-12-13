@@ -2,15 +2,20 @@
   "expo": {
     "name": "Shared-Lists",
     "slug": "Shared-Lists",
+    "owner": "shmely",
+    "scheme": "shopsmartlist",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+     "development": {
+      "developmentClient": true,
+      "distribution": "internal"
     },
     "ios": {
       "supportsTablet": true
